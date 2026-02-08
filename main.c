@@ -20,6 +20,7 @@ void viewStudents();
 void loadFromFile();
 void saveToFile();
 void clearInputBuffer();
+void searchStudent();
 
 int main() {
     int choice;
@@ -52,10 +53,14 @@ int main() {
                 viewStudents();
                 break;
 
-            case 3:
-                saveToFile();
-                printf("Data saved. Goodbye.\n");
-                exit(0);
+           case 3:
+    searchStudent();
+    break;
+
+case 4:
+    saveToFile();
+    printf("Data saved. Goodbye.\n");
+    exit(0);
 
             default:
                 printf("Invalid option.\n");
@@ -145,5 +150,36 @@ void viewStudents() {
                i + 1,
                students[i].name,
                students[i].age);
+    }
+}
+void searchStudent() {
+    char searchName[50];
+    int found = 0;
+
+    clearInputBuffer();
+
+    printf("Enter name to search: ");
+    fgets(searchName, 50, stdin);
+
+    // Remove newline
+    searchName[strcspn(searchName, "\n")] = 0;
+
+    printf("\n--- Search Results ---\n");
+
+    for (int i = 0; i < count; i++) {
+
+        if (strcmp(students[i].name, searchName) == 0) {
+
+            printf("Found:\n");
+            printf("Name: %s\n", students[i].name);
+            printf("Age: %d\n", students[i].age);
+
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Student not found.\n");
     }
 }
