@@ -34,7 +34,8 @@ int main() {
         printf("===============================\n");
         printf("1. Add Student\n");
         printf("2. View Students\n");
-        printf("3. Save & Exit\n");
+        printf("3. Search Student:\n");
+        printf("4. save and exit:\n");
         printf("-------------------------------\n");
         printf("Enter choice: ");
 
