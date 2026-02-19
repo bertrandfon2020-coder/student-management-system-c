@@ -22,6 +22,15 @@ void saveToFile();
 void clearInputBuffer();
 void searchStudent();
 
+/*
+Student Management System
+Author: Fon Bertrand
+Language: C
+Description:
+A console-based application to manage student records.
+Supports adding, viewing, searching, editing, deleting,
+and saving student data using file storage.
+*/
 int main() {
     int choice;
 
